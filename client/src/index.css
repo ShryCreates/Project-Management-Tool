@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  background-color: #0a0f1e;
+  color: #e2e8f0;
+  overflow: hidden;
+}
+
+/* ── Ambient background glows ─────────────────────────────────── */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(120px);
+}
+
+/* Top-right purple glow */
+body::before {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  animation: glowPulse 8s ease-in-out infinite alternate;
+}
+
+/* Bottom-left blue glow */
+body::after {
+  width: 700px;
+  height: 700px;
+  bottom: -250px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.10) 0%, transparent 70%);
+  animation: glowPulse 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes glowPulse {
+  0%   { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.1); }
+}
+
+/* Ensure content sits above glows */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Custom scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2d3748; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #4a5568; }
+
+/* ── Ripple effect ────────────────────────────────────────────── */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.18) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.ripple:active::after {
+  opacity: 1;
+  transition: opacity 0s;
+}
+
+/* ── Card hover lift ──────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease,
+              border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 40px -8px rgba(99, 102, 241, 0.25);
+}
+
+/* ── Skeleton shimmer ─────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg,
+    #1e293b 0%,
+    #273045 40%,
+    #1e293b 80%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* ── Page fade-in ─────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered children */
+.stagger-children > * { animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.stagger-children > *:nth-child(1) { animation-delay: 0.04s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.12s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.16s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.24s; }
+
+/* ── Modal scale-in ───────────────────────────────────────────── */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.94) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-in {
+  animation: modalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Backdrop blur fade ───────────────────────────────────────── */
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.backdrop-in {
+  animation: backdropIn 0.2s ease both;
+}
+
+/* ── Drag overlay ─────────────────────────────────────────────── */
+.task-card-dragging {
+  opacity: 0.45;
+  transform: rotate(2deg) scale(0.98);
+}
+
+/* ── Sidebar item active glow ─────────────────────────────────── */
+.sidebar-active {
+  position: relative;
+}
+.sidebar-active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 60%;
+  background: #6366f1;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Input focus ring ─────────────────────────────────────────── */
+.input-glow:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* ── Progress bar animate ─────────────────────────────────────── */
+@keyframes progressFill {
+  from { width: 0%; }
+}
+.progress-animate {
+  animation: progressFill 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.2s;
+}
+
+/* ── Button press ─────────────────────────────────────────────── */
+.btn-press:active {
+  transform: scale(0.96);
+}
