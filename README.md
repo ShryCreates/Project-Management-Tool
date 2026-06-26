@@ -1,147 +1,168 @@
-# ProjectFlow — Team Collaboration Tool
+# 🚀 ProjectFlow - Full Stack Project Management Tool
 
-A full-stack project management tool like Trello/Asana with real-time WebSocket notifications.
+A modern **MERN Stack Project Management Application** that enables individuals and teams to efficiently plan, organize, track, and collaborate on projects using an interactive Kanban board. The application provides secure authentication, project management, task tracking, team collaboration, and a responsive user interface inspired by tools like Trello, Jira, and ClickUp.
 
-📌 Project Overview
+---
 
-ProjectFlow is a modern full-stack project management application built using the MERN Stack. It helps individuals and teams efficiently organize projects, manage tasks using a Kanban board, collaborate with teammates, and monitor project progress through an intuitive dashboard.
+## 📌 Features
 
-The application provides a clean, responsive, and user-friendly interface inspired by popular project management platforms such as Trello, Jira, ClickUp, and Linear.
+### 🔐 Authentication & Authorization
+- User Registration & Login
+- JWT-based Authentication
+- Protected Routes
+- Secure Password Hashing using bcrypt
+- User Profile Management
 
-✨ Features
+### 📊 Dashboard
+- Personalized Dashboard
+- Project Overview
+- Total Projects Statistics
+- My Projects
+- Shared Projects
+- Responsive Project Cards
 
-🔐 Authentication
-User Registration
-Secure Login
-JWT Authentication
-Protected Routes
-Logout Functionality
+### 📁 Project Management
+- Create New Projects
+- Edit Project Details
+- Delete Projects
+- Project Descriptions
+- Project Collaboration
 
-📊 Dashboard
-Personalized Welcome Dashboard
-Total Projects Overview
-My Projects
-Shared Projects
-Quick Project Navigation
-Responsive Project Cards
+### ✅ Task Management
+- Interactive Kanban Board
+- Drag & Drop Tasks
+- Create, Update & Delete Tasks
+- Task Priorities
+- Task Status Tracking
+- Task Assignment
+- Due Date Management
 
-📁 Project Management
-Create New Projects
-Edit Project Details
-Delete Projects
-Project Descriptions
-Multiple Projects Support
+### 👥 Team Collaboration
+- Invite Members
+- Manage Team Members
+- Shared Workspaces
+- Collaborative Project Access
 
-✅ Task Management
-Kanban Board
-To Do
-In Progress
-In Review
-Done
+### 🔍 Search & Filters
+- Search Tasks
+- Filter by Member
+- Filter by Priority
+- Quick Navigation
 
-Features include:
+### 🎨 User Interface
+- Modern Dark Theme
+- Responsive Design
+- Interactive Dashboard
+- Smooth Navigation
+- Clean and Professional Layout
 
-Create Tasks
-Edit Tasks
-Delete Tasks
-Drag & Drop Tasks
-Organize Tasks by Status
+---
 
-👥 Team Collaboration
-Invite Team Members
-Manage Collaborators
-Shared Projects
-Team Workspace
+# 🛠 Tech Stack
 
-🔎 Search & Filters
-Search Tasks
-Filter by Members
-Filter by Priority
-Quick Navigation
+### Frontend
+- React.js
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Axios
+- React Icons
+- Zustand (State Management)
 
-🎨 Modern UI
-Dark Theme
-Responsive Design
-Interactive Dashboard
-Clean Navigation Sidebar
-Beautiful Project Cards
-Modern Kanban Layout
+### Backend
+- Node.js
+- Express.js
+- JWT Authentication
+- bcrypt.js
+- REST API
 
-🛠 Tech Stack
+### Database
+- MongoDB
+- Mongoose
 
-Frontend
-React.js
-React Router
-Axios
-Tailwind CSS
-Context API
-React Icons
+### Tools & Utilities
+- Git
+- GitHub
+- Postman
+- Nodemon
+- dotenv
 
-Backend
-Node.js
-Express.js
-JWT Authentication
-Bcrypt.js
-REST APIs
+---
 
-Database
-MongoDB
-Mongoose
+# 📂 Project Structure
 
-Other Tools
-Git
-GitHub
-Postman
-Nodemon
-dotenv
-
-📂 Folder Structure
-ProjectFlow/
+```
+Project_Management_Tool/
 │
 ├── client/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── layouts/
-│   │   ├── context/
-│   │   ├── hooks/
-│   │   ├── utils/
 │   │   ├── assets/
-│   │   └── App.jsx
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── layouts/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   ├── store/
+│   │   ├── types/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   │
+│   ├── package.json
+│   └── vite.config.ts
 │
 ├── server/
-│   ├── config/
-│   ├── controllers/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
 │   ├── utils/
 │   ├── index.js
-│   └── .env
+│   └── package.json
 │
 ├── README.md
-└── package.json
+└── .gitignore
+```
 
-🚀 Installation
+---
 
-Clone Repository
-git clone https://github.com/yourusername/ProjectFlow.git
-cd ProjectFlow
-Install Dependencies
+# 🚀 Getting Started
 
-Frontend
-cd client
-npm install
+## Clone the Repository
 
-Backend
+```bash
+git clone https://github.com/ShryCreates/HorizonTechX_Project-Management-Tool.git
+```
+
+```bash
+cd HorizonTechX_Project-Management-Tool
+```
+
+---
+
+## Install Dependencies
+
+### Backend
+
+```bash
 cd server
 npm install
+```
 
-Environment Variables
+### Frontend
 
-Create a .env file inside the server directory.
+```bash
+cd client
+npm install
+```
 
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file inside the **server** folder.
+
+```env
 PORT=5000
 
 MONGO_URI=your_mongodb_connection_string
@@ -149,46 +170,108 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
 CLIENT_URL=http://localhost:5173
+```
 
-Start Backend
+---
+
+# ▶️ Run the Application
+
+### Start Backend
+
+```bash
 cd server
 npm run dev
+```
 
-Start Frontend
+### Start Frontend
+
+```bash
 cd client
 npm run dev
-
-📷 Screenshots
-Dashboard
-<img width="1910" height="867" alt="Screenshot 2026-06-26 095327" src="https://github.com/user-attachments/assets/f12e8635-9d21-4904-b1d5-908aeda9764b" />
-<img width="1912" height="863" alt="Screenshot 2026-06-26 095346" src="https://github.com/user-attachments/assets/e0122281-f031-492b-bffa-a4c3a30bf592" />
-
-Kanban Board
-<img width="1912" height="875" alt="Screenshot 2026-06-26 095405" src="https://github.com/user-attachments/assets/ce704c7c-ecf8-4ac2-b107-bf8d456e7744" />
-<img width="1912" height="867" alt="Screenshot 2026-06-26 095459" src="https://github.com/user-attachments/assets/66115297-2457-4c17-b005-6b288dc4931b" />
-<img width="1912" height="867" alt="Screenshot 2026-06-26 095540" src="https://github.com/user-attachments/assets/5e8ffd55-fa1b-4c8b-9448-178afa6e4891" />
-
-API Endpoints
-
-Authentication
-POST /api/auth/register
-POST /api/auth/login
-GET /api/auth/profile
-
-Projects
-GET /api/projects
-POST /api/projects
-PUT /api/projects/:id
-DELETE /api/projects/:id
-
-Tasks
-GET /api/tasks
-POST /api/tasks
-PUT /api/tasks/:id
-DELETE /api/tasks/:id
-
-Author
-Shreya Kumari
-GitHub: https://github.com/ShryCreates
-LinkedIn: https://www.linkedin.com/in/shreya-kumari-24a249333/
 ```
+
+The application will run on:
+
+```
+Frontend : http://localhost:5173
+
+Backend  : http://localhost:5000
+```
+
+---
+
+# 📸 Screenshots
+
+## 🏠 Dashboard
+<img width="1900" height="868" alt="image" src="https://github.com/user-attachments/assets/aab03a08-7a7d-4914-9e59-e79799b41996" />
+<img width="1908" height="851" alt="image" src="https://github.com/user-attachments/assets/5cd6da1d-7923-4e3d-a830-ef45cb52b5ac" />
+---
+
+## 📋 Kanban Board
+<img width="1898" height="862" alt="image" src="https://github.com/user-attachments/assets/f4f91dd5-5938-4a67-89f1-a8d6630f3de2" />
+<img width="843" height="852" alt="image" src="https://github.com/user-attachments/assets/a44570c9-47a8-4275-849d-d6a8531b9496" />
+
+---
+
+## 🔐 Login Page
+<img width="800" height="847" alt="image" src="https://github.com/user-attachments/assets/be93a75b-7b5e-44dd-84fb-3977f96b5a42" />
+---
+
+## 📝 Register Page
+<img width="716" height="847" alt="image" src="https://github.com/user-attachments/assets/07590634-116d-4f18-bd0e-eccb0f041dff" />
+---
+
+# 📡 API Endpoints
+
+## Authentication
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/register` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/auth/profile` | Get User Profile |
+
+---
+
+## Projects
+
+| Method | Endpoint |
+|---------|----------|
+| GET | `/api/projects` |
+| POST | `/api/projects` |
+| PUT | `/api/projects/:id` |
+| DELETE | `/api/projects/:id` |
+
+---
+
+## Tasks
+
+| Method | Endpoint |
+|---------|----------|
+| GET | `/api/tasks` |
+| POST | `/api/tasks` |
+| PUT | `/api/tasks/:id` |
+| DELETE | `/api/tasks/:id` |
+
+---
+
+## Comments
+
+| Method | Endpoint |
+|---------|----------|
+| GET | `/api/comments/:taskId` |
+| POST | `/api/comments` |
+
+---
+
+# 👩‍💻 Author
+
+**Shreya Kumari**
+
+### Connect with Me
+
+- GitHub: https://github.com/ShryCreates
+- LinkedIn: https://www.linkedin.com/in/shreya-kumari-24a249333/
+- Email: shry1012005@gmail.com
+
+---
