@@ -21,6 +21,8 @@ const COLUMN_COLORS: Record<string, string> = {
   'Done': 'bg-green-500',
 };
 
+// you code is public 
+
 export default function BoardColumn({ column, project, tasks, totalTasksInColumn, isFiltering }: Props) {
   const { setNodeRef, isOver } = useDroppable({ id: column.title });
   const [showCreate, setShowCreate] = useState(false);
