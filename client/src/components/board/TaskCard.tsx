@@ -54,14 +54,13 @@ export default function TaskCard({ task, onClick, isDragging = false }: Props) {
     <div
       ref={setNodeRef}
       style={cardStyle}
-      className={`group rounded-xl p-3.5 cursor-pointer select-none card-hover
-        ${isSortableDragging ? 'opacity-30 scale-95' : ''}
-        ${isDragging ? 'rotate-2' : ''}`}
-        ${isSortableDragging ? 'opacity-30 scale-95' : ''}
-        ${isDragging
-          ? 'rotate-2 shadow-2xl border-indigo-400 opacity-90'
-          : 'border-slate-700 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-0.5'
-        }`}
+      className={`group rounded-xl p-3.5 cursor-pointer select-none
+  ${isSortableDragging ? "opacity-30 scale-95" : ""}
+  ${
+    isDragging
+      ? "rotate-2 shadow-2xl border-indigo-400 opacity-90"
+      : "border-slate-700 hover:border-indigo-500 hover:shadow-lg"
+  }`}
     >
       {/* Drag handle area */}
       <div
